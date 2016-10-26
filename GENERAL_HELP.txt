@@ -1,0 +1,141 @@
+======================
+GENERAL INFORMATION
+======================
+
+---------------------------------------------
+					GIT
+---------------------------------------------
+
+
+---------------------------------------------
+GIT -- list different files from two git branchs
+---------------------------------------------
+git diff --name-status master
+
+--------------------------------------------
+GIT -- compare files from differente branchs
+--------------------------------------------
+ git diff master -- file_name.jsp
+
+
+------------------------------------------------
+GIT -- SHOW DIFFERENT FILES BETWEEN TWO COMMITS
+------------------------------------------------
+git diff HEAD 7ab4720f403499a2ad00fce3e8c85a66e3ab673f --raw
+
+------------------------------------------------
+GIT -- REMOVE  UNTRACKED FILES
+------------------------------------------------
+git clean -f -d
+
+------------------------------------------------
+GIT -- LIST ALL FILES FROM A SPECIFIC COMMIT
+------------------------------------------------
+git show --name-only --oneline b2e25eed82f7276d3cbc7d57bedddec4691e5ec1
+
+git show --name-only --oneline ba660355284fdc58de1e2ca1f3ce870e5d4a34f4
+
+
+git log --pretty=oneline
+
+---------------------------------------------
+				UNIX
+---------------------------------------------
+
+--------------------------------------------
+UNIX - find program by port
+--------------------------------------------
+sudo netstat -tulpn | grep 7001
+
+--------------------------------------------
+UNIX - remove files resul from a file search
+--------------------------------------------
+find . -name  "*.iml" -exec rm -rf {} \;
+
+--------------------------------------------
+UNIX - RUNNING A GREP IN A FIND FILE RETURN
+--------------------------------------------
+$ find . -name "*DefaultFileStoreFactory*" -exec grep configurationPath {} \;
+
+--------------------------------------------
+UNIX - find a program id
+--------------------------------------------
+pgrep -u tomas -f  skype
+
+
+--------------------------------------------
+UNIX - showing HD's space on linux
+--------------------------------------------
+df -h
+
+--------------------------------------------
+UNIX - find diretories call dirname without recusive
+--------------------------------------------
+find ./ -maxdepth 1 -type d -name dirname
+
+--------------------------------------------
+UNIX - copy files from another server
+--------------------------------------------
+scp user@hosts:/path/file/origin/file.txt .
+
+
+--------------------------------------------
+UNIX - GREP CONTENT INFORMING THE FILE PATTERN
+--------------------------------------------
+$ grep -rnw "DISABLE_LIND" --include=*.java
+
+$ grep -rnwi "tools" --include=*.{properties,xml}
+
+grep -rnwi "HEAD" --include=*.{jsp,java,properties,xml,scss}
+
+
+--------------------------------------------
+JAVA - LISTING ALL CLASSES FROM A JAR FILE
+--------------------------------------------
+jar -tvf classes.jar
+
+StoreDeploymentWorker
+
+
+--------------------------------------------
+UNIX - CHECKING A END FILE FORMAT
+--------------------------------------------
+$ file testfile.txt: ASCII text
+
+--------------------------------------------
+UNIX - CONVERTING FILE FOR UNIX FORMAT
+--------------------------------------------
+$ dos2unix testfile2.txt
+
+--------------------------------------------
+UNIX - SETIMG FILE FORMAT USING CONVERTING FILE FOR UNIX FORMAT
+--------------------------------------------
+$ set fileformat=unix
+
+---------------------------------------------
+ORACLE LISTING ALL CONSTRAINS
+---------------------------------------------
+select * from ALL_CONSTRAINTS;
+
+---------------------------------------------
+SEND EMAIL USING SMTP
+---------------------------------------------
+[user@serverhost logs]$ telnet smtp-server-hosts 25
+Trying 187.17.75.138...
+Connected to smtp-server-hosts (127.0.0.1).
+Escape character is '^]'.
+220 relay01.hosts.local ESMTP Postfix
+helo test      
+250 relay01.hots.local
+mail from: user@gmail.com
+250 2.1.0 Ok
+rcpt to: user@gmail.com
+250 2.1.5 Ok
+data
+354 End data with <CR><LF>.<CR><LF>
+teste envio hmg2
+.    
+250 2.0.0 Ok: queued as 97B061447C
+quit
+221 2.0.0 Bye
+Connection closed by foreign host.
