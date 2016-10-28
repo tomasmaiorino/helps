@@ -45,6 +45,12 @@ GIT -- RESET REMOVING OTHER COMMITS TO A SPECIFC COMMIT
 ------------------------------------------------
 git reset --hard 88388
 
+------------------------------------------------
+GIT -- IGNORE LOCAL CHANGES TO TRACKED FILES
+------------------------------------------------
+$ git update-index --assume-unchanged path/file/file.txt
+
+
 ---------------------------------------------
 				UNIX
 ---------------------------------------------
