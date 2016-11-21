@@ -50,6 +50,11 @@ GIT -- IGNORE LOCAL CHANGES TO TRACKED FILES
 ------------------------------------------------
 $ git update-index --assume-unchanged path/file/file.txt
 
+------------------------------------------------
+GIT -- NAMED A GIT STASH
+------------------------------------------------
+git stash save "name wanted"
+git stash apply stash^{/name wa}
 
 ---------------------------------------------
 				UNIX
@@ -124,6 +129,11 @@ $ dos2unix testfile2.txt
 UNIX - SETIMG FILE FORMAT USING CONVERTING FILE FOR UNIX FORMAT
 --------------------------------------------
 $ set fileformat=unix
+
+--------------------------------------------
+UNIX - REMOVING ALL FILES THAT ARE NOT JARS
+--------------------------------------------
+$ rm -r !(*.jar)
 
 ---------------------------------------------
 ORACLE LISTING ALL CONSTRAINS
