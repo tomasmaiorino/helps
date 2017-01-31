@@ -172,3 +172,19 @@ teste envio hmg2
 quit
 221 2.0.0 Bye
 Connection closed by foreign host.
+
+
+---------------------------------------------
+				RUBY ON RAILS
+---------------------------------------------
+
+--------------------------------------------
+TESTING JUST ONE TEST
+--------------------------------------------
+
+$ rake test TEST=test/integration/company_controller_integration_test.rb TESTOPTS="--name=test_integration_should_find_full_company_by_token -v"
+
+--------------------------------------------
+TESTING JUST ONE CLASS TEST
+--------------------------------------------
+$ rake test TEST=test/integration/company_controller_integration_test.rb -v
