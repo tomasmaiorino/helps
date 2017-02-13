@@ -56,6 +56,23 @@ GIT -- NAMED A GIT STASH
 git stash save "name wanted"
 git stash apply stash^{/name wa}
 
+=============================
+UPDATE SUB MODULE
+=============================
+git submodule update --remote
+
+=============================
+REALLY NICE GIT LOG
+=============================
+git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s"
+
+'%h': abbreviated commit hash
+'%d': ref names, like the --decorate option of git-log[1]
+'%cr': committer date, relative
+'%ce': committer email
+'%s': subject
+
+
 ---------------------------------------------
 				UNIX
 ---------------------------------------------
@@ -158,7 +175,7 @@ Trying 187.17.75.138...
 Connected to smtp-server-hosts (127.0.0.1).
 Escape character is '^]'.
 220 relay01.hosts.local ESMTP Postfix
-helo test      
+helo test
 250 relay01.hots.local
 mail from: user@gmail.com
 250 2.1.0 Ok
@@ -167,7 +184,7 @@ rcpt to: user@gmail.com
 data
 354 End data with <CR><LF>.<CR><LF>
 teste envio hmg2
-.    
+.
 250 2.0.0 Ok: queued as 97B061447C
 quit
 221 2.0.0 Bye
@@ -188,3 +205,34 @@ $ rake test TEST=test/integration/company_controller_integration_test.rb TESTOPT
 TESTING JUST ONE CLASS TEST
 --------------------------------------------
 $ rake test TEST=test/integration/company_controller_integration_test.rb -v
+
+
+---------------------------------------------
+				MAC OS
+---------------------------------------------
+
+--------------------------------------------
+CLEAN TERMINAL HISTORIC (UBUNTU RESET)
+--------------------------------------------
+$ command + k
+
+
+--------------------------------------------
+FINDING A 'PROGRAM' BY PORT
+--------------------------------------------
+$ lsof -i tcp:9040
+
+
+---------------------------------------------
+				DOCKER
+---------------------------------------------
+
+--------------------------------------------
+REMOVE ALL DOCKER IMAGES WITHOUT TAG
+--------------------------------------------
+$ docker rmi -f $(docker images --all | grep -i "<none>" | awk '{print $3}')
+
+--------------------------------------------
+REMOVE ALL DOCKER IMAGES
+--------------------------------------------
+$ docker rmi $(docker images -q)
