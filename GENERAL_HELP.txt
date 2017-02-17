@@ -236,3 +236,12 @@ $ docker rmi -f $(docker images --all | grep -i "<none>" | awk '{print $3}')
 REMOVE ALL DOCKER IMAGES
 --------------------------------------------
 $ docker rmi $(docker images -q)
+
+---------------------------------------------
+	SPRING BOOT
+---------------------------------------------
+
+--------------------------------------------
+RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
+--------------------------------------------
+ mvn -DargLine="-Dspring.profiles.active=dev" test
