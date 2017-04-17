@@ -56,6 +56,16 @@ GIT -- NAMED A GIT STASH
 git stash save "name wanted"
 git stash apply stash^{/name wa}
 
+------------------------------------------------
+GIT -- REMOVE BRANCH REMOTELY
+------------------------------------------------
+$ git push origin --delete branch-name
+
+------------------------------------------------
+GIT -- LIST REMOTE BRANCHS
+------------------------------------------------
+$ git branch -r
+
 =============================
 UPDATE SUB MODULE
 =============================
@@ -236,6 +246,7 @@ $ docker rmi -f $(docker images --all | grep -i "<none>" | awk '{print $3}')
 REMOVE ALL DOCKER IMAGES
 --------------------------------------------
 $ docker rmi $(docker images -q)
+$ docker rmi -f $(docker ps -a | grep -i "<none>" | awk '{print $3}')
 
 ---------------------------------------------
 	SPRING BOOT
