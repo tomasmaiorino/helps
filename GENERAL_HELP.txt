@@ -82,6 +82,11 @@ git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%C
 '%ce': committer email
 '%s': subject
 
+=============================================
+GIT -- CHECKOUT A FILE TO A SPECIFIC COMMIT
+=============================================
+
+git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
 
 ---------------------------------------------
 				UNIX
@@ -256,3 +261,9 @@ $ docker rmi -f $(docker ps -a | grep -i "<none>" | awk '{print $3}')
 RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 --------------------------------------------
  mvn -DargLine="-Dspring.profiles.active=dev" test
+
+
+ ----------------------------------------------------------------------------------------
+ RUNNING A MAVEN TEST SETTING THE A PROPERTY VALUE THROUGH COMMAND LINE
+ ----------------------------------------------------------------------------------------
+ mvn test -Doxford.service.api.id=OXFORD_SERVICE_API_ID -Doxford.service.app.key=OXFORD_SERVICE_APP_KEY
