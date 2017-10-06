@@ -86,7 +86,13 @@ git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%C
 GIT -- CHECKOUT A FILE TO A SPECIFIC COMMIT
 =============================================
 
-git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
+$ git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
+
+=============================================
+GIT -- SEARCH FOR A SPECIFIC LOG MESSAGE
+=============================================
+$ git log --oneline | grep ET-865
+
 
 ---------------------------------------------
 				UNIX
@@ -231,6 +237,10 @@ CLEAN TERMINAL HISTORIC (UBUNTU RESET)
 --------------------------------------------
 $ command + k
 
+--------------------------------------------
+CHECKING PORT
+--------------------------------------------
+$ lsof -i :3306
 
 --------------------------------------------
 FINDING A 'PROGRAM' BY PORT
