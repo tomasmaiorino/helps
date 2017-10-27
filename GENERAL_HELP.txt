@@ -245,3 +245,12 @@ $ docker rmi $(docker images -q)
 RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 --------------------------------------------
  mvn -DargLine="-Dspring.profiles.active=dev" test
+
+
+---------------------------------------------
+	MONGO
+---------------------------------------------
+--------------------------------------------
+MONGO IMPORT TO A REMOTE MONGO
+--------------------------------------------
+$ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
