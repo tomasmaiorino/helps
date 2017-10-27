@@ -56,6 +56,16 @@ GIT -- NAMED A GIT STASH
 git stash save "name wanted"
 git stash apply stash^{/name wa}
 
+------------------------------------------------
+GIT -- REMOVE BRANCH REMOTELY
+------------------------------------------------
+$ git push origin --delete branch-name
+
+------------------------------------------------
+GIT -- LIST REMOTE BRANCHS
+------------------------------------------------
+$ git branch -r
+
 =============================
 UPDATE SUB MODULE
 =============================
@@ -72,6 +82,16 @@ git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%C
 '%ce': committer email
 '%s': subject
 
+=============================================
+GIT -- CHECKOUT A FILE TO A SPECIFIC COMMIT
+=============================================
+
+git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
+
+=============================================
+GIT -- SEARCH FOR A SPECIFIC LOG MESSAGE
+=============================================
+git log --oneline | grep ET-865
 
 ---------------------------------------------
 				UNIX
@@ -97,11 +117,15 @@ UNIX - find a program id
 --------------------------------------------
 pgrep -u tomas -f  skype
 
-
 --------------------------------------------
 UNIX - showing HD's space on linux
 --------------------------------------------
 df -h
+
+--------------------------------------------
+UNIX - showing all folder's content length
+--------------------------------------------
+du -sh *
 
 --------------------------------------------
 UNIX - find diretories call dirname without recusive
@@ -216,12 +240,16 @@ CLEAN TERMINAL HISTORIC (UBUNTU RESET)
 --------------------------------------------
 $ command + k
 
+--------------------------------------------
+CHECKING PORT
+--------------------------------------------
+$ lsof -i :3306
+
 
 --------------------------------------------
 FINDING A 'PROGRAM' BY PORT
 --------------------------------------------
 $ lsof -i tcp:9040
-
 
 ---------------------------------------------
 				DOCKER
@@ -236,6 +264,7 @@ $ docker rmi -f $(docker images --all | grep -i "<none>" | awk '{print $3}')
 REMOVE ALL DOCKER IMAGES
 --------------------------------------------
 $ docker rmi $(docker images -q)
+$ docker rmi -f $(docker ps -a | grep -i "<none>" | awk '{print $3}')
 
 ---------------------------------------------
 	SPRING BOOT
@@ -246,7 +275,6 @@ RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 --------------------------------------------
  mvn -DargLine="-Dspring.profiles.active=dev" test
 
-
 ---------------------------------------------
 	MONGO
 ---------------------------------------------
@@ -254,3 +282,8 @@ RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 MONGO IMPORT TO A REMOTE MONGO
 --------------------------------------------
 $ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
+
+----------------------------------------------------------------------------------------
+ RUNNING A MAVEN TEST SETTING THE A PROPERTY VALUE THROUGH COMMAND LINE
+----------------------------------------------------------------------------------------
+$ mvn test -Doxford.service.api.id=OXFORD_SERVICE_API_ID -Doxford.service.app.key=OXFORD_SERVICE_APP_KEY
