@@ -176,10 +176,25 @@ UNIX - REMOVING ALL FILES THAT ARE NOT JARS
 --------------------------------------------
 $ rm -r !(*.jar)
 
+
+---------------------------------------------
+				ORACLE
+---------------------------------------------
+
 ---------------------------------------------
 ORACLE LISTING ALL CONSTRAINS
 ---------------------------------------------
 select * from ALL_CONSTRAINTS;
+
+---------------------------------------------
+ORACLE LISTING ALL PRIVILEGES
+---------------------------------------------
+select * from DBA_SYS_PRIVS;
+
+---------------------------------------------
+ORACLE LISTING ALL PRIVILEGES BY USER
+---------------------------------------------
+select * from DBA_SYS_PRIVS where GRANTEE like '%ATG%';
 
 --------------------------------------------
 JAVA - LISTING ALL CLASSES FROM A JAR FILE
@@ -287,3 +302,48 @@ $ mongoimport --db databaseName --collection known_words --file known_words.json
  RUNNING A MAVEN TEST SETTING THE A PROPERTY VALUE THROUGH COMMAND LINE
 ----------------------------------------------------------------------------------------
 $ mvn test -Doxford.service.api.id=OXFORD_SERVICE_API_ID -Doxford.service.app.key=OXFORD_SERVICE_APP_KEY
+
+
+---------------------------------------------
+				WINDOWS
+---------------------------------------------
+
+--------------------------------------------
+CLEAN TERMINAL
+--------------------------------------------
+$ cls
+
+--------------------------------------------
+FIND A PROCCESS BY PORT
+--------------------------------------------
+$ netstat -ano | grep 5556
+
+--------------------------------------------
+FIND A TASK BY PID
+--------------------------------------------
+$ tasklist -fi "pid eq 2856"
+
+--------------------------------------------
+KILLING A TASK USING A FIND RESULT
+--------------------------------------------
+$ taskkill /F /FI "PID eq 2856"
+
+--------------------------------------------
+KILLING A TASK BY PID
+--------------------------------------------
+$ taskkill /F /PID 2856
+
+--------------------------------------------
+RENANING EITHER A FILE OR DIRECTORE
+--------------------------------------------
+$ ren chap10 part10 
+
+--------------------------------------------
+PRINTING ON THE COMMAND A FILE CONTENT
+--------------------------------------------
+$ type fileName
+
+--------------------------------------------
+FINDING FILE 
+--------------------------------------------
+$ dir archive /S
