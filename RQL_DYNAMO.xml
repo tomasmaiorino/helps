@@ -1,0 +1,28 @@
+<query-items item-descriptor="sku" id-only="true">parentProducts is NULL and  creationDate > date("2015-09-17")</query-items> 
+
+<query-items item-descriptor="sku" id-only="true">parentProducts is NULL fixedChildCategories is NULL and fixedParentCategories is NULL and  creationDate > date("2015-09-17")</query-items> 
+
+<query-items item-descriptor="sku" id-only="true">id in {}</query-items> 
+
+<query-items item-descriptor="integrationItem" id-only="true">creationDate > date("2015-09-17") and itemType = "LINE"</query-items> 
+
+<query-items item-descriptor="integrationItem" id-only="true">creationDate > datetime("2015-06-17 16:00:00 EDT") and 
+datetime("2015-06-17 17:00:00 EDT") > creationDate</query-items> 
+
+<query-items item-descriptor="integrationItem" id-only="true">itemType = "SKU" and includes {"0032573","0032575","0298331"} </query-items> 
+
+<query-items item-descriptor="category" id-only="true">creationDate > date("2015-09-16") and NOT fixedParentCategories IS NULL</query-items> 
+
+<query-items item-descriptor="sku" id-only="true">creationDate > datetime("2015-09-23 09:00:45 EDT")</query-items> 
+
+<query-items item-descriptor="sku" id-only="true">id in {}</query-items> 
+
+CHANGE USERS PASSWORD THROUGTH DYN ADMIN
+
+<add-item item-descriptor="user" id="108298824">
+  <set-property name="password">fd4b3084e06d5a95a5825ac15df23941d0b8c06f</set-property>
+ <set-property name="passwordSalt">77ae691f622c3ff6d79aa67ae399fb215ee06b9b</set-property>
+</add-item> 
+
+<query-items item-descriptor="integrationItem" id-only="true">creationDate > datetime("2015-05-30 00:00:00 EDT") and 
+datetime("2015-05-30 23:59:00 EDT")  > creationDate </query-items> 

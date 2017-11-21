@@ -17,7 +17,6 @@ GIT -- compare files from differente branchs
 --------------------------------------------
  git diff master -- file_name.jsp
 
-
 ------------------------------------------------
 GIT -- SHOW DIFFERENT FILES BETWEEN TWO COMMITS
 ------------------------------------------------
@@ -176,6 +175,10 @@ UNIX - REMOVING ALL FILES THAT ARE NOT JARS
 --------------------------------------------
 $ rm -r !(*.jar)
 
+--------------------------------------------
+UNIX - TAIL A FILE WITH AN INTERVAL OF 0 SECONDS
+--------------------------------------------
+$ tail -f -s0
 
 ---------------------------------------------
 				ORACLE
