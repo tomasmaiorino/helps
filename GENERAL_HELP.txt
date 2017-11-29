@@ -1,48 +1,46 @@
-======================
-GENERAL INFORMATION
-======================
+#######################################################################################################################################
 
----------------------------------------------
-					GIT
----------------------------------------------
+															HELP COMMANDS
 
+#######################################################################################################################################
 
+***********************************************************
+						GIT
+***********************************************************
 ---------------------------------------------
 GIT -- list different files from two git branchs
 ---------------------------------------------
-git diff --name-status master
+$ git diff --name-status master
 
 --------------------------------------------
 GIT -- compare files from differente branchs
 --------------------------------------------
- git diff master -- file_name.jsp
+$ git diff master -- file_name.jsp
 
 ------------------------------------------------
 GIT -- SHOW DIFFERENT FILES BETWEEN TWO COMMITS
 ------------------------------------------------
-git diff HEAD 7ab4720f403499a2ad00fce3e8c85a66e3ab673f --raw
+$ git diff HEAD 7ab4720f403499a2ad00fce3e8c85a66e3ab673f --raw
 
 ------------------------------------------------
 GIT -- REMOVE  UNTRACKED FILES
 ------------------------------------------------
-git clean -f -d
+$ git clean -f -d
 
 ------------------------------------------------
 GIT -- LIST ALL FILES FROM A SPECIFIC COMMIT
 ------------------------------------------------
-git show --name-only --oneline b2e25eed82f7276d3cbc7d57bedddec4691e5ec1
-
-git show --name-only --oneline ba660355284fdc58de1e2ca1f3ce870e5d4a34f4
+$ git show --name-only --oneline b2e25eed82f7276d3cbc7d57bedddec4691e5ec1
 
 ------------------------------------------------
 GIT -- LIST ALL BRANCH`S COMMIT
 -----------------------------------------------
-git log --pretty=oneline
+$ git log --pretty=oneline
 
 ------------------------------------------------
 GIT -- RESET REMOVING OTHER COMMITS TO A SPECIFC COMMIT
 ------------------------------------------------
-git reset --hard 88388
+$ git reset --hard 88388
 
 ------------------------------------------------
 GIT -- IGNORE LOCAL CHANGES TO TRACKED FILES
@@ -52,8 +50,8 @@ $ git update-index --assume-unchanged path/file/file.txt
 ------------------------------------------------
 GIT -- NAMED A GIT STASH
 ------------------------------------------------
-git stash save "name wanted"
-git stash apply stash^{/name wa}
+$ git stash save "name wanted"
+$ git stash apply stash^{/name wa}
 
 ------------------------------------------------
 GIT -- REMOVE BRANCH REMOTELY
@@ -65,15 +63,20 @@ GIT -- LIST REMOTE BRANCHS
 ------------------------------------------------
 $ git branch -r
 
-=============================
-UPDATE SUB MODULE
-=============================
-git submodule update --remote
+------------------------------------------------
+GIT -- RENAMING BRANCH
+------------------------------------------------
+$ git branch -m previousName newName
 
-=============================
+------------------------------------------------
+UPDATE SUB MODULE
+------------------------------------------------
+$ git submodule update --remote
+
+------------------------------------------------
 REALLY NICE GIT LOG
-=============================
-git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s"
+------------------------------------------------
+$ git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s"
 
 '%h': abbreviated commit hash
 '%d': ref names, like the --decorate option of git-log[1]
@@ -81,30 +84,28 @@ git log --submodule=log --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%C
 '%ce': committer email
 '%s': subject
 
-=============================================
+------------------------------------------------
 GIT -- CHECKOUT A FILE TO A SPECIFIC COMMIT
-=============================================
+------------------------------------------------
+$ git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
 
-git checkout cd9b59044d7a433be4ecaeecad0de16d388da642 file/path/file.txt
-
-=============================================
+------------------------------------------------
 GIT -- SEARCH FOR A SPECIFIC LOG MESSAGE
-=============================================
-git log --oneline | grep ET-865
+------------------------------------------------
+$ git log --oneline | grep ET-865
 
----------------------------------------------
-				UNIX
----------------------------------------------
-
+***********************************************************
+							UNIX
+***********************************************************
 --------------------------------------------
 UNIX - find program by port
 --------------------------------------------
-sudo netstat -tulpn | grep 7001
+$ sudo netstat -tulpn | grep 7001
 
 --------------------------------------------
 UNIX - remove files resul from a file search
 --------------------------------------------
-find . -name  "*.iml" -exec rm -rf {} \;
+$ find . -name  "*.iml" -exec rm -rf {} \;
 
 --------------------------------------------
 UNIX - RUNNING A GREP IN A FIND FILE RETURN
@@ -114,22 +115,22 @@ $ find . -name "*DefaultFileStoreFactory*" -exec grep configurationPath {} \;
 --------------------------------------------
 UNIX - find a program id
 --------------------------------------------
-pgrep -u tomas -f  skype
+$ pgrep -u tomas -f  skype
 
 --------------------------------------------
 UNIX - showing HD's space on linux
 --------------------------------------------
-df -h
+$ df -h
 
 --------------------------------------------
 UNIX - showing all folder's content length
 --------------------------------------------
-du -sh *
+$ du -sh *
 
 --------------------------------------------
 UNIX - find diretories call dirname without recusive
 --------------------------------------------
-find ./ -maxdepth 1 -type d -name dirname
+$ find ./ -maxdepth 1 -type d -name dirname
 
 --------------------------------------------
 UNIX - find filex by date and ignore some folders
@@ -139,7 +140,7 @@ $ find . -name guideline -prune -o -name '*.jsp' -newermt $DATE_TO_SEARCH -print
 --------------------------------------------
 UNIX - copy files from another server
 --------------------------------------------
-scp user@hosts:/path/file/origin/file.txt .
+$ scp user@hosts:/path/file/origin/file.txt .
 
 --------------------------------------------
 UNIX - print the date two days ago
@@ -153,7 +154,7 @@ $ grep -rnw "DISABLE_LIND" --include=*.java
 
 $ grep -rnwi "tools" --include=*.{properties,xml}
 
-grep -rnwi "HEAD" --include=*.{jsp,java,properties,xml,scss}
+$ grep -rnwi "HEAD" --include=*.{jsp,java,properties,xml,scss}
 
 --------------------------------------------
 UNIX - CHECKING A END FILE FORMAT
@@ -180,10 +181,9 @@ UNIX - TAIL A FILE WITH AN INTERVAL OF 0 SECONDS
 --------------------------------------------
 $ tail -f -s0
 
----------------------------------------------
-				ORACLE
----------------------------------------------
-
+***********************************************************
+						ORACLE
+***********************************************************
 ---------------------------------------------
 ORACLE LISTING ALL CONSTRAINS
 ---------------------------------------------
@@ -199,19 +199,22 @@ ORACLE LISTING ALL PRIVILEGES BY USER
 ---------------------------------------------
 select * from DBA_SYS_PRIVS where GRANTEE like '%ATG%';
 
+***********************************************************
+						JAVA
+***********************************************************
 --------------------------------------------
 JAVA - LISTING ALL CLASSES FROM A JAR FILE
 --------------------------------------------
-jar -tvf classes.jar
+$ jar -tvf classes.jar
 
 --------------------------------------------
 JAVA - GETTING THREAD DUMP
 --------------------------------------------
-jstack -l JAVA_PID > jstack.out
+$ jstack -l JAVA_PID > jstack.out
 
----------------------------------------------
-SEND EMAIL USING SMTP
----------------------------------------------
+***********************************************************
+					SEND EMAIL USING SMTP
+***********************************************************
 [user@serverhost logs]$ telnet smtp-server-hosts 25
 Trying 187.17.75.138...
 Connected to smtp-server-hosts (127.0.0.1).
@@ -233,10 +236,9 @@ quit
 Connection closed by foreign host.
 
 
----------------------------------------------
-				RUBY ON RAILS
----------------------------------------------
-
+***********************************************************
+					RUBY ON RAILS
+***********************************************************
 --------------------------------------------
 TESTING JUST ONE TEST
 --------------------------------------------
@@ -249,10 +251,9 @@ TESTING JUST ONE CLASS TEST
 $ rake test TEST=test/integration/company_controller_integration_test.rb -v
 
 
----------------------------------------------
-				MAC OS
----------------------------------------------
-
+***********************************************************
+						MAC OS
+***********************************************************
 --------------------------------------------
 CLEAN TERMINAL HISTORIC (UBUNTU RESET)
 --------------------------------------------
@@ -263,16 +264,14 @@ CHECKING PORT
 --------------------------------------------
 $ lsof -i :3306
 
-
 --------------------------------------------
 FINDING A 'PROGRAM' BY PORT
 --------------------------------------------
 $ lsof -i tcp:9040
 
----------------------------------------------
-				DOCKER
----------------------------------------------
-
+***********************************************************
+						DOCKER
+***********************************************************
 --------------------------------------------
 REMOVE ALL DOCKER IMAGES WITHOUT TAG
 --------------------------------------------
@@ -284,33 +283,42 @@ REMOVE ALL DOCKER IMAGES
 $ docker rmi $(docker images -q)
 $ docker rmi -f $(docker ps -a | grep -i "<none>" | awk '{print $3}')
 
----------------------------------------------
-	SPRING BOOT
----------------------------------------------
+----------------------------------------------------------------------------------------
+START A DOCKER CONTAINER WITH A HOST FOLDER CONFIGURED AS A VOLUME INTO CONTAINER
+----------------------------------------------------------------------------------------
+$ docker run -it -rm  -e ENV_VARIABLE=123123 -e ENV_VARIABLE_2=3322 -v localPath:/home/app image_name
 
---------------------------------------------
-RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
---------------------------------------------
- mvn -DargLine="-Dspring.profiles.active=dev" test
-
----------------------------------------------
-	MONGO
----------------------------------------------
---------------------------------------------
-MONGO IMPORT TO A REMOTE MONGO
---------------------------------------------
-$ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
-
+***********************************************************
+						MAVEN
+***********************************************************
 ----------------------------------------------------------------------------------------
  RUNNING A MAVEN TEST SETTING THE A PROPERTY VALUE THROUGH COMMAND LINE
 ----------------------------------------------------------------------------------------
 $ mvn test -Doxford.service.api.id=OXFORD_SERVICE_API_ID -Doxford.service.app.key=OXFORD_SERVICE_APP_KEY
 
+----------------------------------------------------------------------------------------
+ RUNNING A MAVEN TEST FOR A SPECIFIC CLASS AND METHOD
+----------------------------------------------------------------------------------------
+$ mvn test -P it -Dtest=CardsTypeControllerIT#save_ValidResourceGiven_ShouldSaveClient
 
----------------------------------------------
-				WINDOWS
----------------------------------------------
+--------------------------------------------
+RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
+--------------------------------------------
+$ mvn -DargLine="-Dspring.profiles.active=dev" test
 
+
+***********************************************************
+						MONGO
+***********************************************************
+--------------------------------------------
+MONGO IMPORT TO A REMOTE MONGO
+--------------------------------------------
+$ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
+
+
+***********************************************************
+						WINDOWS
+***********************************************************
 --------------------------------------------
 CLEAN TERMINAL
 --------------------------------------------
