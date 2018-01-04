@@ -219,6 +219,11 @@ LISTING ALL SCHEMAS
 ---------------------------------------------
 $ select distinct owner from dba_segments where owner not in ('SYSTEM', 'XDB', 'SYS', 'TSMSYS', 'MDSYS', 'EXFSYS', 'WMSYS', 'ORDSYS', 'OUTLN', 'DBSNMP');
 
+---------------------------------------------
+DESCRIBE A TABLE
+---------------------------------------------
+describe table_name;
+
 ***********************************************************
 						JAVA
 ***********************************************************
