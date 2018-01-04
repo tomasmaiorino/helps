@@ -181,23 +181,43 @@ UNIX - TAIL A FILE WITH AN INTERVAL OF 0 SECONDS
 --------------------------------------------
 $ tail -f -s0
 
+--------------------------------------------
+UNIX - OPEN WITH CAT GZ FILES
+--------------------------------------------
+$zcat 2017-12-19T00-00-00.info.log.gz
+
+--------------------------------------------
+UNIX - TO FIND OUT WHAT VERSION OF LINUX YOU ARE RUNNING
+--------------------------------------------
+$ cat /etc/*-release
+
 ***********************************************************
 						ORACLE
 ***********************************************************
 ---------------------------------------------
 ORACLE LISTING ALL CONSTRAINS
 ---------------------------------------------
-select * from ALL_CONSTRAINTS;
+$ select * from ALL_CONSTRAINTS;
 
 ---------------------------------------------
 ORACLE LISTING ALL PRIVILEGES
 ---------------------------------------------
-select * from DBA_SYS_PRIVS;
+$ select * from DBA_SYS_PRIVS;
 
 ---------------------------------------------
 ORACLE LISTING ALL PRIVILEGES BY USER
 ---------------------------------------------
-select * from DBA_SYS_PRIVS where GRANTEE like '%ATG%';
+$ select * from DBA_SYS_PRIVS where GRANTEE like '%ATG%';
+
+---------------------------------------------
+DESCRIBE A TABLE
+---------------------------------------------
+$ describe table_name;
+
+---------------------------------------------
+LISTING ALL SCHEMAS
+---------------------------------------------
+$ select distinct owner from dba_segments where owner not in ('SYSTEM', 'XDB', 'SYS', 'TSMSYS', 'MDSYS', 'EXFSYS', 'WMSYS', 'ORDSYS', 'OUTLN', 'DBSNMP');
 
 ***********************************************************
 						JAVA
@@ -288,6 +308,8 @@ START A DOCKER CONTAINER WITH A HOST FOLDER CONFIGURED AS A VOLUME INTO CONTAINE
 ----------------------------------------------------------------------------------------
 $ docker run -it -rm  -e ENV_VARIABLE=123123 -e ENV_VARIABLE_2=3322 -v localPath:/home/app image_name
 
+docker run -it --rm -v /Users/tomas.maiorino/projects/portalparceirosweb -w /home/app teracy/angular-cli
+
 ***********************************************************
 						MAVEN
 ***********************************************************
@@ -347,7 +369,7 @@ $ taskkill /F /PID 2856
 --------------------------------------------
 RENANING EITHER A FILE OR DIRECTORE
 --------------------------------------------
-$ ren chap10 part10 
+$ ren chap10 part10
 
 --------------------------------------------
 PRINTING ON THE COMMAND A FILE CONTENT
@@ -355,6 +377,6 @@ PRINTING ON THE COMMAND A FILE CONTENT
 $ type fileName
 
 --------------------------------------------
-FINDING FILE 
+FINDING FILE
 --------------------------------------------
 $ dir archive /S
