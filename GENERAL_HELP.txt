@@ -184,7 +184,12 @@ $ tail -f -s0
 --------------------------------------------
 UNIX - OPEN WITH CAT GZ FILES
 --------------------------------------------
-$zcat 2017-12-19T00-00-00.info.log.gz
+$ zcat 2017-12-19T00-00-00.info.log.gz
+
+--------------------------------------------
+UNIX - RUN GREP AGAINST ZCAT RESULT
+--------------------------------------------
+$ zcat log_archive_201801*.gz | grep --color=auto -a "pattern"
 
 --------------------------------------------
 UNIX - TO FIND OUT WHAT VERSION OF LINUX YOU ARE RUNNING
@@ -236,6 +241,15 @@ $ jar -tvf classes.jar
 JAVA - GETTING THREAD DUMP
 --------------------------------------------
 $ jstack -l JAVA_PID > jstack.out
+
+-------------------------------------------------------
+JAVA - FINDING OUT WHICH THREAD IS CONSUMMING MORE CPU
+------------------------------------------------------
+1 - $ top -n 1 -H -p [pid]
+2 - $ jstack [PID] > jstack-output.txt
+3 - Take a look at the top result and check the PID.
+4 - Convert the pid to hex.
+5 - $ cat jstack-output.txt | grep -i 2202(converted pid)
 
 ***********************************************************
 					SEND EMAIL USING SMTP
