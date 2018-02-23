@@ -43,6 +43,12 @@ GIT -- RESET REMOVING OTHER COMMITS TO A SPECIFC COMMIT
 $ git reset --hard 88388
 
 ------------------------------------------------
+GIT -- UNDOING GIT ADD
+------------------------------------------------
+$ git reset
+$ git reset <file>
+
+------------------------------------------------
 GIT -- IGNORE LOCAL CHANGES TO TRACKED FILES
 ------------------------------------------------
 $ git update-index --assume-unchanged path/file/file.txt
@@ -94,6 +100,10 @@ GIT -- SEARCH FOR A SPECIFIC LOG MESSAGE
 ------------------------------------------------
 $ git log --oneline | grep ET-865
 
+------------------------------------------------
+GIT -- LIST ALL COMMITS IN A SPECIFC FILE
+------------------------------------------------
+$git log --follow path/to/file/filename.extension
 ***********************************************************
 							UNIX
 ***********************************************************
@@ -195,6 +205,14 @@ $ zcat log_archive_201801*.gz | grep --color=auto -a "pattern"
 UNIX - TO FIND OUT WHAT VERSION OF LINUX YOU ARE RUNNING
 --------------------------------------------
 $ cat /etc/*-release
+
+--------------------------------------------
+REGEX FIND REPLACE
+--------------------------------------------
+find:
+^[\d]{1,2}
+replace:
+$& content to add
 
 ***********************************************************
 						ORACLE
@@ -325,9 +343,22 @@ $ docker rmi -f $(docker ps -a | grep -i "<none>" | awk '{print $3}')
 ----------------------------------------------------------------------------------------
 START A DOCKER CONTAINER WITH A HOST FOLDER CONFIGURED AS A VOLUME INTO CONTAINER
 ----------------------------------------------------------------------------------------
-$ docker run -it -rm  -e ENV_VARIABLE=123123 -e ENV_VARIABLE_2=3322 -v localPath:/home/app image_name
+-- linux
+$ docker run -it --rm  -e "ENV_VARIABLE=123123" -e "ENV_VARIABLE_2=3322" -v localPath:/home/app <image_name>
+-- windows
+$ docker run -it --rm  -e "ENV_VARIABLE=123123" -e "ENV_VARIABLE_2=3322" -v /c/Users/personal/project:/home/app <image_name>
 
-docker run -it --rm -v /Users/tomas.maiorino/projects/portalparceirosweb -w /home/app teracy/angular-cli
+----------------------------------------------------------------------------------------
+DOCKER BUILDING AN IMAGE USING ARGUMENTS
+----------------------------------------------------------------------------------------
+$ docker build -t <container_name> --build-arg <parameter_name>=<parameter_value> .
+
+----------------------------------------------------------------------------------------
+EXECUTING A MAVEN INTEGRATION TEST THROUGH A DOCKER CONTAINER
+----------------------------------------------------------------------------------------
+$ docker run -it --rm --name <container_name> <image_name> <maven command>
+example: docker run -it --rm --name eng eng mvn verify -DskipItTest=false  -P it
+docker run -e "SPRING_DATASOURCE_USERNAME=123123" -e "SPRING_DATASOURCE_URL=3322" -e "SPRING_DATASOURCE_PASSWORD=123" -it --rm --name eng eng  mvn spring-boot:run -Drun.arguments="--spring.profiles.active=local"
 
 ***********************************************************
 						MAVEN
@@ -347,6 +378,23 @@ RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 --------------------------------------------
 $ mvn -DargLine="-Dspring.profiles.active=dev" test
 
+***********************************************************
+						POSTGRES
+***********************************************************
+--------------------------------------------
+LISTING ALL DATABASES
+--------------------------------------------
+$SELECT datname FROM pg_database WHERE datistemplate = false;
+
+--------------------------------------------
+CONNECTION TO A POSTGRES
+--------------------------------------------
+$psql -U postgres
+
+--------------------------------------------
+QUIT FROM A POSTGRES CONNECTION
+--------------------------------------------
+$\q
 
 ***********************************************************
 						MONGO
