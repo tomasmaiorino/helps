@@ -104,6 +104,12 @@ $ git log --oneline | grep ET-865
 GIT -- LIST ALL COMMITS IN A SPECIFC FILE
 ------------------------------------------------
 $git log --follow path/to/file/filename.extension
+
+------------------------------------------------
+GIT -- LIST ALL STASH CONTENT
+------------------------------------------------
+$git stash show -p
+
 ***********************************************************
 							UNIX
 ***********************************************************
@@ -351,7 +357,7 @@ $ docker run -it --rm  -e "ENV_VARIABLE=123123" -e "ENV_VARIABLE_2=3322" -v /c/U
 ----------------------------------------------------------------------------------------
 DOCKER BUILDING AN IMAGE USING ARGUMENTS
 ----------------------------------------------------------------------------------------
-$ docker build -t <container_name> --build-arg <parameter_name>=<parameter_value> .
+$ docker build -t <image_name> --build-arg <parameter_name>=<parameter_value> .
 
 ----------------------------------------------------------------------------------------
 EXECUTING A MAVEN INTEGRATION TEST THROUGH A DOCKER CONTAINER
