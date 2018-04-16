@@ -213,6 +213,11 @@ UNIX - TO FIND OUT WHAT VERSION OF LINUX YOU ARE RUNNING
 $ cat /etc/*-release
 
 --------------------------------------------
+UNIX - CURL HTTP HEADER
+--------------------------------------------
+$ curl -I http://page_to_request
+
+--------------------------------------------
 REGEX FIND REPLACE
 --------------------------------------------
 find:
