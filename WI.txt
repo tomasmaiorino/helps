@@ -10,3 +10,9 @@ MICROSERVICE
 =============================================================
 A microservice is a self contained process that provides a unique business capability.
 Advantages: Is easily scalable, if we have a problem we can repair only the microservice and not all application.
+
+
+=============================================================
+DESIGN PATTERNS
+=============================================================
+It is a general repeatable solution to a commonly occurring problem is a software design.
