@@ -60,6 +60,11 @@ $ git stash save "name wanted"
 $ git stash apply stash^{/name wa}
 
 ------------------------------------------------
+GIT -- APPLYING AND INDEXED STASK ITEM
+------------------------------------------------
+$ git apply stash@{0}
+
+------------------------------------------------
 GIT -- REMOVE BRANCH REMOTELY
 ------------------------------------------------
 $ git push origin --delete branch-name
@@ -103,7 +108,18 @@ $ git log --oneline | grep ET-865
 ------------------------------------------------
 GIT -- LIST ALL COMMITS IN A SPECIFC FILE
 ------------------------------------------------
-$git log --follow path/to/file/filename.extension
+$ git log --follow path/to/file/filename.extension
+
+------------------------------------------------
+GIT -- LIST ALL STASH CONTENT
+------------------------------------------------
+$ git stash show -p
+
+------------------------------------------------
+GIT -- CHANGING COMMIT MESSAGE LOCALLY
+------------------------------------------------
+$ git commit --amend
+
 ***********************************************************
 							UNIX
 ***********************************************************
@@ -205,6 +221,11 @@ $ zcat log_archive_201801*.gz | grep --color=auto -a "pattern"
 UNIX - TO FIND OUT WHAT VERSION OF LINUX YOU ARE RUNNING
 --------------------------------------------
 $ cat /etc/*-release
+
+--------------------------------------------
+UNIX - CURL HTTP HEADER
+--------------------------------------------
+$ curl -I http://page_to_request
 
 --------------------------------------------
 REGEX FIND REPLACE
@@ -351,7 +372,7 @@ $ docker run -it --rm  -e "ENV_VARIABLE=123123" -e "ENV_VARIABLE_2=3322" -v /c/U
 ----------------------------------------------------------------------------------------
 DOCKER BUILDING AN IMAGE USING ARGUMENTS
 ----------------------------------------------------------------------------------------
-$ docker build -t <container_name> --build-arg <parameter_name>=<parameter_value> .
+$ docker build -t <image_name> --build-arg <parameter_name>=<parameter_value> .
 
 ----------------------------------------------------------------------------------------
 EXECUTING A MAVEN INTEGRATION TEST THROUGH A DOCKER CONTAINER
@@ -359,6 +380,8 @@ EXECUTING A MAVEN INTEGRATION TEST THROUGH A DOCKER CONTAINER
 $ docker run -it --rm --name <container_name> <image_name> <maven command>
 example: docker run -it --rm --name eng eng mvn verify -DskipItTest=false  -P it
 docker run -e "SPRING_DATASOURCE_USERNAME=123123" -e "SPRING_DATASOURCE_URL=3322" -e "SPRING_DATASOURCE_PASSWORD=123" -it --rm --name eng eng  mvn spring-boot:run -Drun.arguments="--spring.profiles.active=local"
+
+
 
 ***********************************************************
 						MAVEN
