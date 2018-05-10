@@ -392,9 +392,53 @@ CONNECTION TO A POSTGRES
 $psql -U postgres
 
 --------------------------------------------
+TO USE A DATABASE
+--------------------------------------------
+$ \c <database_name>
+
+--------------------------------------------
+TO DESCRIBE A TABLE
+--------------------------------------------
+$ \d+ send_user;
+
+--------------------------------------------
 QUIT FROM A POSTGRES CONNECTION
 --------------------------------------------
 $\q
+
+
+***********************************************************
+						MYSQL
+***********************************************************
+--------------------------------------------
+SELECT ALL USERS
+--------------------------------------------
+$ SELECT CONCAT(QUOTE(user),'@',QUOTE(host)) UserAccount FROM mysql.user;
+
+----------------------------------------------------------------------------------------
+GRANT PRIVILEGES TO A SPECIFIC USER, FOR A SPECIFC DATABASE AND HOST
+----------------------------------------------------------------------------------------
+$ GRANT ALL PRIVILEGES ON rf.* TO 'rf'@'172.17.0.3' WITH GRANT OPTION;
+
+--------------------------------------------
+SELECT ALL USERS PRIVILEGES
+--------------------------------------------
+$ select * from information_schema.user_privileges;
+
+--------------------------------------------
+SHOW ALL GRANTS FOR A SPECIFC USER
+--------------------------------------------
+$ show grants for 'rf'@'%';
+
+--------------------------------------------
+REVOKE ALL PRIVILEGES FROM A SPECIFC USER
+--------------------------------------------
+$ revoke all privileges on *.* from 'rf'@'%';
+
+--------------------------------------------
+FLUSH ALL PRIVILEGES
+--------------------------------------------
+$ flush privileges;
 
 ***********************************************************
 						MONGO
@@ -403,6 +447,21 @@ $\q
 MONGO IMPORT TO A REMOTE MONGO
 --------------------------------------------
 $ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
+
+
+***********************************************************
+						POSTGRESQL
+***********************************************************
+--------------------------------------------
+SHOW ALL POSTGRES DATABASES USING PLSQL
+--------------------------------------------
+$ select datname from pg_database where datistemplate = false;
+
+
+--------------------------------------------
+CONNECTING TO POSTGRES THROUGH PSQL
+--------------------------------------------
+psql -h localhost -p 5432: -U postgres
 
 
 ***********************************************************
