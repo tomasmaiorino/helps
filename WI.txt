@@ -16,3 +16,35 @@ Advantages: Is easily scalable, if we have a problem we can repair only the micr
 DESIGN PATTERNS
 =============================================================
 It is a general repeatable solution to a commonly occurring problem is a software design.
+
+=============================================================
+DATA STRUCTURE
+=============================================================
+In computer science, a data structure is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.
+More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.[4]
+
+--------
+Array
+--------
+It is a data strutucture consisting in a collection of elements, each identified by at least one array index or key.
+We can have a definied length array (an usual array) or a undefined length array as a java list for example.
+(Element) - Each item stored in an array is called an element.
+(Index) - Each location of an element in an array has a numerical index, which is used to identify the element.
+Pros: A definied length array can't has its length increase. The element value can be changed easily with using an index.
+When using an array list, to add a new element is an operation quite simple, unless the array need to be resized.
+Cons: The elements can be accessed by an index.
+Complexity:
+get= O(1)
+add= O(n)
+
+
+
+High availability:
+1 - fault-tolerant
+
+1 - No single point of failure: Build redundancy in the environment at all tiers to remove single points of failure.
+This tenet should be applied to both hardware and the infrastructure's software components.
+
+2 - Failover: In the case of a failure, use load balancing to dynamically restore service to application servers.
+
+What is circuit breaker pattern ?
