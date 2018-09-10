@@ -250,6 +250,15 @@ find:
 replace:
 $& content to add
 
+
+***********************************************************
+							VIM
+***********************************************************
+--------------------------------------------
+VIM - DELETE LINE
+--------------------------------------------
+$ D
+
 ***********************************************************
 						ORACLE
 ***********************************************************
@@ -416,6 +425,12 @@ RUNNING A MAVEN TEST FOR A SPECIFIC SPRING PROFILE
 --------------------------------------------
 $ mvn -DargLine="-Dspring.profiles.active=dev" test
 
+--------------------------------------------
+STARTING A SPRING BOOT APPLICATION SETTING THE DESIRED PROFILE
+--------------------------------------------
+$ mvn spring-boot:run -Dspring-boot.run.profiles=dev
+
+
 ***********************************************************
 						POSTGRES
 ***********************************************************
@@ -486,6 +501,15 @@ MONGO IMPORT TO A REMOTE MONGO
 --------------------------------------------
 $ mongoimport --db databaseName --collection known_words --file known_words.json --host host:13282 -u user -p pass
 
+--------------------------------------------
+MONGO LIST DATABASES
+--------------------------------------------
+$ db.adminCommand( { listDatabases: 1 } )
+
+--------------------------------------------
+MONGO REMOVE ITEM FROM A COLLECTION
+--------------------------------------------
+$  db.product.remove({"_id":"<id-value>"});
 
 ***********************************************************
 						POSTGRESQL
