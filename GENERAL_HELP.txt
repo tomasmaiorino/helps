@@ -428,7 +428,7 @@ $ mvn -DargLine="-Dspring.profiles.active=dev" test
 --------------------------------------------
 STARTING A SPRING BOOT APPLICATION SETTING THE DESIRED PROFILE
 --------------------------------------------
-$ mvn spring-boot:run -Dspring-boot.run.profiles=dev
+$ mvn spring-boot:run -Dspring-boot.run.profiles=develop
 
 
 ***********************************************************
@@ -510,6 +510,16 @@ $ db.adminCommand( { listDatabases: 1 } )
 MONGO REMOVE ITEM FROM A COLLECTION
 --------------------------------------------
 $  db.product.remove({"_id":"<id-value>"});
+
+--------------------------------------------
+MONGO GET COLLECTION INDEXES
+--------------------------------------------
+$  db.collection.getIndexes({});
+
+--------------------------------------------
+MONGO DROP COLLECTION INDEX
+--------------------------------------------
+$ db.productType.dropIndex(<index-name>);
 
 ***********************************************************
 						POSTGRESQL
