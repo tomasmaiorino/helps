@@ -439,6 +439,10 @@ STARTING A SPRING BOOT APPLICATION SETTING THE DESIRED PROFILE
 --------------------------------------------
 $ mvn spring-boot:run -Dspring-boot.run.profiles=develop
 
+--------------------------------------------
+LISTING ALL PROJECT DEPENDENCIES
+--------------------------------------------
+$ mvn dependency:tree
 
 ***********************************************************
 						POSTGRES
