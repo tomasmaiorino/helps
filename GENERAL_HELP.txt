@@ -139,10 +139,16 @@ $ git checkout -- <file_path>
 GIT -- SHOWING IN WHICH COMMIT A FILE WAS CREATED
 ------------------------------------------------
 git log -- <file-path> | tail
+
 ------------------------------------------------
 GIT -- SHOW DELETED FILE IN A SPECIFIC COMMIT
 ------------------------------------------------
 $ git show <commit-hash>:<file-path>
+
+------------------------------------------------
+GIT -- SHOW A DELETED FILE'S CONTENT
+------------------------------------------------
+$ git show $(git rev-list --max-count=1 --all -- <file-path>)^:<file-path>
 
 ***********************************************************
 							UNIX
