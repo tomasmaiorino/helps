@@ -603,3 +603,8 @@ FINDING A NETWORK PASSWORD (run as administrator)
 --------------------------------------------
 $(step 1) netsh wlan show profile 
 $(step 2) netsh wlan show profile "<netword-name>" key=clear
+
+--------------------------------------------
+LISTING DOS HISTORY
+--------------------------------------------
+$ doskey /history
