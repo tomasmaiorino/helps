@@ -450,6 +450,11 @@ LISTING ALL PROJECT DEPENDENCIES
 --------------------------------------------
 $ mvn dependency:tree
 
+--------------------------------------------
+EXECUTING CUCUMBER TEST USING AN SPECIFC TAG
+--------------------------------------------
+$ mvn test -Dcucumber.options="--tags <tag-name>"
+
 ***********************************************************
 						POSTGRES
 ***********************************************************
